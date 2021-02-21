@@ -17,9 +17,9 @@ docker-compose up
 and use `http://localhost:4000`
 
 ## Basic logic
-1. Article content must be unique in the bucket
-2. If the content is unique it will save it into DB
-3. If the content is not unique it will not save in into DB and returns an original article data
+- Article content must be unique in the bucket
+- If the content is unique it will be saved into DB
+- If the content is not unique it will not be saved into DB and returns an original article data
 
 ## API
 

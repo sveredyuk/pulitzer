@@ -1,6 +1,8 @@
 # Pulitzer
 Articles content duplication detection and keywords extraction API service.
 
+[![CI](https://github.com/sveredyuk/pulitzer/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/sveredyuk/pulitzer/actions/workflows/ci.yml)
+
 ## Why
 In 2020 during the COVID lock-down, I participated in the developer's competition - DevChallange. One of the tasks was to create an API service for article duplication detection.
 

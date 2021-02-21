@@ -1,15 +1,15 @@
 use Mix.Config
 
-if System.get_env("GITHUB_ACTIONS") do
-  config :elixirius, Elixirius.Repo,
-    username: "postgres",
-    password: "postgres"
-else
-  config :pulitzer, Pulitzer.Repo,
+config :pulitzer, Pulitzer.Repo,
   database: "pulitzer_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox,
   ownership_timeout: 999_999_999
+
+if System.get_env("GITHUB_ACTIONS") do
+  config :elixirius, Elixirius.Repo,
+    username: "postgres",
+    password: "postgres"
 end
 
 # We don't run a server during test. If one is required,

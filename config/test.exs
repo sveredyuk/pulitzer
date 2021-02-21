@@ -7,7 +7,7 @@ config :pulitzer, Pulitzer.Repo,
   ownership_timeout: 999_999_999
 
 if System.get_env("GITHUB_ACTIONS") do
-  config :pulitzer, Elixirius.Repo,
+  config :pulitzer, Pulitzer.Repo,
     username: "postgres",
     password: "postgres"
 end

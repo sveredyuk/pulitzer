@@ -1,20 +1,10 @@
 use Mix.Config
 
-database_url = System.get_env("DATABASE_URL")
-
-if database_url do
-  config :pulitzer, Pulitzer.Repo,
-    url: "#{database_url}_test",
-    show_sensitive_data_on_connection_error: true,
-    pool: Ecto.Adapters.SQL.Sandbox,
-    ownership_timeout: 999_999_999
-else
-  config :pulitzer, Pulitzer.Repo,
-    database: "pulitzer_test#{System.get_env("MIX_TEST_PARTITION")}",
-    hostname: "localhost",
-    pool: Ecto.Adapters.SQL.Sandbox,
-    ownership_timeout: 999_999_999
-end
+config :pulitzer, Pulitzer.Repo,
+  database: "pulitzer_test#{System.get_env("MIX_TEST_PARTITION")}",
+  hostname: "localhost",
+  pool: Ecto.Adapters.SQL.Sandbox,
+  ownership_timeout: 999_999_999
 
 if System.get_env("GITHUB_ACTIONS") do
   config :elixirius, Elixirius.Repo,
